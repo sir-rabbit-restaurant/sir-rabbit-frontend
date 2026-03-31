@@ -24,7 +24,7 @@
 </template>
 
 
-<style lang="css" scoped>
+<style >
 
 @import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
 
@@ -44,14 +44,15 @@
   --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
   --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
   --container: 1200px;
+  --accent-font: "Meow Script", cursive;
   color-scheme: light;
 }
 
 body {
   margin: 0;
-  font-family: "Meow Script", cursive;
   color: var(--text);
-  overflow-x: hidden
+  overflow-x: hidden;
+  
 }
 
 .container {
@@ -76,7 +77,7 @@ body {
   justify-content: flex-end;
   padding-right: 80px;
   font-size: 1.6rem;
-  font-family: "Meow Script", cursive;
+  font-family: var(--accent-font);
 }
 
 .nav {
@@ -90,11 +91,12 @@ body {
   align-items: center;
   margin-left: auto;
   font-size: 1.6rem;
-  font-family: "Meow Script", cursive;
+  font-family: var(--accent-font);
  
 }
 
 .menu a {
+  font-family: var(--accent-font);
   text-decoration: none;
   color: rgba(61, 47, 38, 0.84);
   
