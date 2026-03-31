@@ -43,7 +43,7 @@
   --accent-3: #f5dfc7;
   --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
   --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
-  --container: 1200px;
+  --container: 1400px;
   --accent-font: "Meow Script", cursive;
   color-scheme: light;
 }
@@ -60,6 +60,7 @@ body {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  
 }
 
 .header {
