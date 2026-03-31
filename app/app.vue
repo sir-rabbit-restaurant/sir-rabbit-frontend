@@ -74,7 +74,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 20px;
+  padding-right: 80px;
   font-size: 1.6rem;
   font-family: "Meow Script", cursive;
 }
@@ -168,6 +168,7 @@ body {
   gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
+  margin-left: 60px;
 }
 
 .logo-image {
