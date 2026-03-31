@@ -3,7 +3,7 @@
     <header class="header">
       <div class="container nav">
         <a href="/" class="logo">
-          <img src="/logo.webp" alt="Сэр Кролик" class="logo-image" />
+          <img src="/logo.png" alt="Сэр Кролик" class="logo-image" />
         </a>
 
         <nav class="menu">
@@ -146,6 +146,25 @@ body {
   white-space: nowrap;
 }
 
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22),
+    transparent 80%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.7s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(130%);
+}
+
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 32px rgba(120, 86, 61, 0.1);
@@ -172,10 +191,11 @@ body {
 }
 
 .logo-image {
-  height: 100px;
-  width: auto;
+  width: 300px;
   display: block;
   object-fit: contain;
+  padding-bottom: 10px;
+
 }
 
 </style>
