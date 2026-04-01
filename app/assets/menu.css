@@ -1,8 +1,28 @@
 /* Изоляция секции через родительский класс .s-menu */
+
+
 .s-menu {
   padding: 100px 0;
-  background-color: #fbf8f5; /* Теплый фон как на скрине */
+  background-color: #fbf8f5; 
   font-family: inherit;
+  position: relative;
+}
+.s-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;      
+    left: 5%;   
+    right: 5%;  
+    height: 1.5px;
+    
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(138, 104, 76, 0.2), 
+        transparent
+    );
+    
+    pointer-events: none; 
 }
 
 .s-menu-container {
@@ -66,7 +86,7 @@
 }
 
 .s-menu-chip.active {
-  background: #c5a083; /* Светло-коричневый как на скрине */
+  background: #c5a083; 
   color: #fff;
 }
 
@@ -93,7 +113,7 @@
   border-radius: 2px; 
   overflow: hidden;
   
-  /* Или стильный градиент: */
+  
   background: linear-gradient(135deg, #f3f3f3 0%, #e2e2e2 100%); 
   margin-bottom: 20px;
 }
@@ -103,19 +123,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-/* .s-menu-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;Меню
-  padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  font-size: 0.7rem;
-  color: #221812;
-  text-transform: uppercase;
-  font-weight: 600;
-} */
 
 /* ТЕКСТ */
 .s-menu-info-top {
