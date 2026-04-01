@@ -3,7 +3,6 @@
     <div class="container hero-grid">
       <div class="hero-gallery reveal">
         <div class="hero-gallery-track">
-          <!-- Исправлено: slidesData вместо slides, slide.image вместо slide.url -->
           <div 
             v-for="(slide, index) in slidesData" 
             :key="slide.id"
@@ -13,17 +12,17 @@
           ></div>
         </div>
 
-        <!-- Навигация (Стрелки) — ДОЛЖНЫ БЫТЬ ВНУТРИ .hero-gallery -->
+        <!-- Навигация (Стрелки)  -->
         <div class="hero-gallery-nav">
           <button @click="handlePrev" class="hero-gallery-arrow" type="button">‹</button>
           <button @click="handleNext" class="hero-gallery-arrow" type="button">›</button>
         </div>
 
-        <!-- Оверлей — ДОЛЖЕН БЫТЬ ВНУТРИ .hero-gallery -->
+        
         <div class="hero-gallery-overlay">
           <div class="hero-gallery-caption">
-            <div class="badge">Атмосфера пространства</div>
-            <p>Интерьер, подача и вечерний характер места — в одном визуальном блоке.</p>
+            <!-- <div class="badge">Атмосфера пространства</div>
+            <p>Интерьер, подача и вечерний характер места — в одном визуальном блоке.</p> -->
           </div>
           
           <div class="hero-gallery-dots">
@@ -35,21 +34,21 @@
             ></span>
           </div>
         </div>
-      </div> <!-- ЗДЕСЬ должен закрываться .hero-gallery -->
+      </div> 
 
 
       <div class="hero-info reveal delay-1">
         <div class="badge">Ресторан • Бар • Караоке</div>
         <h1>Сэр Кролик — место для красивых вечеров</h1>
-        <p class="hero-text">Авторская кухня, бар и караоке в светлом премиальном пространстве.</p>
+        <!-- <p class="hero-text">Авторская кухня, бар и караоке в светлом премиальном пространстве.</p> -->
         <div class="hero-actions reveal delay-2">
           <a href="#menu" class="btn btn-secondary">Посмотреть меню</a>
           <a href="https://club-cafe.ru/reserve" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Забронировать</a>
         </div>
-        <div class="hero-note">
+        <!-- <div class="hero-note">
           <strong>Спокойный акцент на атмосфере</strong>
           <p>Без лишних деталей на первом экране — только образ места и главное действие.</p>
-        </div>
+        </div> -->
       </div>
     </div>
 </section>
@@ -63,7 +62,7 @@ const slidesData = ref([
   { id: 1, image: '/imagerabbit/1.webp' },
   { id: 2, image: '/imagerabbit/2.webp' },
   { id: 3, image: '/imagerabbit/3.webp' }
-])
+]) // сюда добавляться новые слайды, если нужно
 
 const currentIndex = ref(0)
 

@@ -8,12 +8,12 @@
         #fbf8f5;}
 
 .hero::after {
-    content: "♠"; /* Или прозрачный SVG кролика */
+    content: "♠"; 
     position: absolute;
     right: -3%;
     bottom: -5%;
     font-size: 25rem;
-    color: rgba(138, 104, 76, 0.2); /* Почти невидимый */
+    color: rgba(138, 104, 76, 0.2); 
     transform: rotate(-15deg);
     pointer-events: none;
 }
@@ -153,9 +153,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 34px;
-    text-align: left;
+    padding: 60px 50px;
     min-height: 560px;
+    gap: 24px;
 }
 
 .hero-info .badge {
@@ -164,13 +164,21 @@
 }
 
 .hero-info h1 {
-    max-width: 11ch;
+    font-size: 3rem; 
+    line-height: 1.1;
+    color: #221812;
+    margin-bottom: 24px;
+    font-family: "Meow Script", cursive;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+
 .hero-text {
-    max-width: 100%;
-    font-size: 1.04rem;
-    margin-top: 18px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(34, 24, 18, 0.7);
+    margin-bottom: 40px;
+    max-width: 90%;
 }
 
 .hero-actions {
@@ -181,7 +189,7 @@
     margin-top: 28px;
 }
 
-.hero-note {
+/* .hero-note {
     margin-top: 22px;
     padding-top: 22px;
     border-top: 1px solid rgba(138, 104, 76, 0.10);
@@ -192,7 +200,7 @@
     font-size: 1rem;
     margin-bottom: 8px;
     color: var(--text);
-    }
+    } */
 
 .btn-secondary {
       color: var(--text);
