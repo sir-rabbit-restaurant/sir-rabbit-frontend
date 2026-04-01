@@ -1,6 +1,7 @@
 <template>
   <TheHeader />
   <HeroSection />
-  <MenuSection
+  <MenuSection/>
+  <Contacts />
   <NuxtPage />
 </template>

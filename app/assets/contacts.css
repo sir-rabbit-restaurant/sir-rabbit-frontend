@@ -1,0 +1,126 @@
+.s-contacts {
+  padding: 100px 0;
+  background-color: #fbf8f5; /* Теплый фон */
+}
+
+.s-contacts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ЗАГОЛОВОК */
+.s-contacts-head {
+  margin-bottom: 48px;
+}
+
+.s-contacts-subtitle {
+  font-size: 0.85rem;
+  color: rgba(34, 24, 18, 0.4);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.s-contacts-title {
+  font-size: 2.2rem;
+  color: #221812;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* СЕТКА (2 колонки) */
+.s-contacts-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Карта чуть шире */
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* КАРТА */
+.s-contacts-map-wrap {
+  background: #f1ede8;
+  border-radius: 34px; /* Крупное скругление как в Hero */
+  min-height: 450px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(138, 104, 76, 0.1);
+}
+
+.map-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(34, 24, 18, 0.3);
+  font-size: 0.9rem;
+}
+
+.map-pin {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+/* ПРАВАЯ ПАНЕЛЬ С КАРТОЧКАМИ */
+.s-contacts-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 34px;
+  border: 1px solid rgba(138, 104, 76, 0.08);
+  box-shadow: 0 10px 40px rgba(34, 24, 18, 0.03);
+}
+
+.contacts-card {
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(138, 104, 76, 0.08);
+}
+
+.contacts-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(34, 24, 18, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.contact-value {
+  display: block;
+  font-size: 1.1rem;
+  color: #221812;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+a.contact-value:hover {
+  color: #b88460;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 992px) {
+  .s-contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .s-contacts-map-wrap {
+    min-height: 300px;
+    order: 2; /* Карту вниз на мобилках */
+  }
+
+  .s-contacts-details {
+    order: 1;
+    padding: 30px;
+  }
+}
