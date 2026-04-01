@@ -21,8 +21,6 @@
         
         <div class="hero-gallery-overlay">
           <div class="hero-gallery-caption">
-            <!-- <div class="badge">Атмосфера пространства</div>
-            <p>Интерьер, подача и вечерний характер места — в одном визуальном блоке.</p> -->
           </div>
           
           <div class="hero-gallery-dots">
@@ -39,16 +37,11 @@
 
       <div class="hero-info reveal delay-1">
         <div class="badge">Ресторан • Бар • Караоке</div>
-        <h1>Сэр Кролик — место для красивых вечеров</h1>
-        <!-- <p class="hero-text">Авторская кухня, бар и караоке в светлом премиальном пространстве.</p> -->
+        <h1><span class="brand-name">Сэр Кролик</span> — место для красивых вечеров</h1>
         <div class="hero-actions reveal delay-2">
           <a href="#menu" class="btn btn-secondary">Посмотреть меню</a>
           <a href="https://club-cafe.ru/reserve" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Забронировать</a>
         </div>
-        <!-- <div class="hero-note">
-          <strong>Спокойный акцент на атмосфере</strong>
-          <p>Без лишних деталей на первом экране — только образ места и главное действие.</p>
-        </div> -->
       </div>
     </div>
 </section>
