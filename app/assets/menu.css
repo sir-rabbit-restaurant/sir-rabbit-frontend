@@ -1,0 +1,146 @@
+/* Изоляция секции через родительский класс .s-menu */
+.s-menu {
+  padding: 100px 0;
+  background-color: #fbf8f5; /* Теплый фон как на скрине */
+  font-family: inherit;
+}
+
+.s-menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ШАПКА */
+.s-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.s-menu-label {
+  display: block;
+  font-size: 1rem;
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 8px;
+}
+
+.s-menu-title {
+  font-size: 2rem;
+  color: #221812;
+  margin: 0;
+  font-weight: 600;
+}
+
+.s-menu-btn-action {
+  font-size: 0.85rem;
+  color: rgba(34, 24, 18, 0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(34, 24, 18, 0.2);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.s-menu-btn-action:hover {
+  color: #b88460;
+  border-color: #b88460;
+}
+
+/* ФИЛЬТРЫ (ЧИПСЫ) */
+.s-menu-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.s-menu-chip {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(34, 24, 18, 0.5);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.s-menu-chip.active {
+  background: #c5a083; /* Светло-коричневый как на скрине */
+  color: #fff;
+}
+
+.s-menu-chip:not(.active):hover {
+  background: rgba(138, 104, 76, 0.05);
+}
+
+/* СЕТКА */
+.s-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* КАРТОЧКА */
+.s-menu-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-menu-image-wrap {
+  position: relative;
+  height: 240px;
+  border-radius: 2px; 
+  overflow: hidden;
+  
+  /* Или стильный градиент: */
+  background: linear-gradient(135deg, #f3f3f3 0%, #e2e2e2 100%); 
+  margin-bottom: 20px;
+}
+
+.s-menu-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .s-menu-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;Меню
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: #221812;
+  text-transform: uppercase;
+  font-weight: 600;
+} */
+
+/* ТЕКСТ */
+.s-menu-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.s-menu-info-top h3 {
+  font-size: 1.1rem;
+  color: #221812;
+  margin: 0;
+  font-weight: 500;
+}
+
+.s-menu-price {
+  font-size: 1rem;
+  color: #221812;
+  font-weight: 600;
+}
+
+.s-menu-desc {
+  font-size: 0.9rem;
+  color: rgba(34, 24, 18, 0.5);
+  line-height: 1.5;
+  margin: 0;
+}

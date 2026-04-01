@@ -2,6 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  css: ['~/assets/header.css', '~/assets/hero.css'],
+  css: ['~/assets/header.css', '~/assets/hero.css', '~/assets/menu.css'],
   
 })
