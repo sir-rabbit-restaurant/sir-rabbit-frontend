@@ -10,12 +10,20 @@
 
 
 :root {
-  --bg: #151311;
-  --primary-color: #d8b28a;
+
+  --text: #dcdffd;
+--background: #02031a;
+--primary: #828ef7;
+--secondary: #5e0a9f;
+--accent: #d63bf3;
+
+  --bg: var(--background);
+  --primary-color: var(--primary);
+  --secondary-color: var(--secondary);
+  --bg-2: rgba(216, 185, 156, 0.05);
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: rgba(84, 81, 81, 0.92);
   --border: rgba(138, 104, 76, 0.1);
-  --text: #3d2f26;
   --muted: rgba(76, 58, 46, 0.74);
   --accent: #d8b28a;
   --accent-2: #b88460;
@@ -43,6 +51,7 @@ body {
 .header {
   position: sticky;
   top: 0;
+  background-color: var(--bg-2);
   z-index: 80;
   backdrop-filter: blur(18px);
   border-bottom: 2px solid rgba(138, 104, 76, 0.08);
@@ -143,7 +152,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #d8b28a, #b88460);
+  background: var(--primary-color);
   
   box-shadow: 0 16px 36px rgba(184, 132, 96, 0.16);
 }
