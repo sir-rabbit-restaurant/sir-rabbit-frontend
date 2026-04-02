@@ -42,13 +42,14 @@
 .s-menu-label {
   display: block;
   font-size: 1rem;
-  text-decoration-color: rgba(0, 0, 0, 0.4);
+  color: white;
+
   margin-bottom: 8px;
 }
 
 .s-menu-title {
   font-size: 2rem;
-  color: #221812;
+    color: white;
   margin: 0;
   font-weight: 600;
 }
@@ -79,7 +80,7 @@
   border-radius: 999px;
   border: 1px solid transparent;
   background: transparent;
-  color: rgba(34, 24, 18, 0.5);
+  color: white;
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.3s ease;

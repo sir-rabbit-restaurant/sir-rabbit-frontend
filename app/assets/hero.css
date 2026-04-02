@@ -1,13 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
+
+:root {
+
+    --background: #1a1a1a;
+    --background-1: rgba(141, 141, 141); 
+}
+
 .hero {
   position: relative;
   overflow: hidden;
   padding: 96px 0 72px;
-  background:
-    #1a1a1a,
-    radial-gradient(
-      circle at 100% 100%,
-      rgba(255, 255, 255, 0.2) 0%,
-    ),
+  background:var(--background);
 }
 
 .hero::after {
@@ -60,8 +63,7 @@
   border-radius: 34px;
   overflow: hidden;
   backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: var(--background-1);
   box-shadow: 0 20px 50px rgba(138, 104, 76, 0.12);
 }
 
@@ -152,8 +154,7 @@
 }
 
 .hero-info {
-  /* background: rgba(255, 255, 255, 0.80); */
-  background: linear-gradient(135deg, #ffffff 0%, #fcf9f6 100%);
+    сolor: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -181,13 +182,12 @@
 }
 
 .brand-name {
-  color: #835e49;
+  color:white ;
   display: inline-block;
   position: relative;
   font-size: 3rem;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
 
 .hero-text {
   font-size: 1.1rem;

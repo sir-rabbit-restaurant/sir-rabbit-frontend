@@ -168,6 +168,6 @@ body {
   width: 300px;
   display: block;
   object-fit: contain;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   margin-left: -30px;
 }
