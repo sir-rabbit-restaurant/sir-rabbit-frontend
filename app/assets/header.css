@@ -48,7 +48,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 80px;
   font-size: 1.6rem;
   font-family: var(--accent-font);
 }
@@ -56,6 +55,7 @@ body {
 .nav {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  
 }
 
 .menu {
@@ -162,7 +162,6 @@ body {
   gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
-  margin-left: 60px;
 }
 
 .logo-image {
@@ -170,5 +169,5 @@ body {
   display: block;
   object-fit: contain;
   padding-bottom: 10px;
-
+  margin-left: -30px;
 }
