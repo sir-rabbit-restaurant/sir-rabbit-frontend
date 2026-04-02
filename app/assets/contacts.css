@@ -15,14 +15,12 @@
 
 .s-contacts-subtitle {
   font-size: 0.85rem;
-  color: rgba(34, 24, 18, 0.4);
   display: block;
   margin-bottom: 8px;
 }
 
 .s-contacts-title {
   font-size: 2.2rem;
-  color: #221812;
   font-weight: 600;
   margin: 0;
 }
@@ -51,7 +49,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgba(34, 24, 18, 0.3);
   font-size: 0.9rem;
 }
 
@@ -87,7 +84,6 @@
 .contact-label {
   display: block;
   font-size: 0.75rem;
-  color: rgba(34, 24, 18, 0.35);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
@@ -96,16 +92,12 @@
 .contact-value {
   display: block;
   font-size: 1.1rem;
-  color: #221812;
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
   line-height: 1.5;
 }
 
-a.contact-value:hover {
-  color: #b88460;
-}
 
 /* Адаптивность для мобилок */
 @media (max-width: 992px) {

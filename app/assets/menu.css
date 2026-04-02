@@ -2,28 +2,11 @@
 
 .s-menu {
   padding: 100px 0;
-  background-color: #1a1a1a;
   font-family: inherit;
   position: relative;
   
 }
-.s-menu::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 5%;
-  right: 5%;
-  height: 1.5px;
 
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(138, 104, 76, 0.2),
-    transparent
-  );
-
-  pointer-events: none;
-}
 
 .s-menu-container {
   max-width: 1200px;
@@ -42,21 +25,19 @@
 .s-menu-label {
   display: block;
   font-size: 1rem;
-  color: white;
 
   margin-bottom: 8px;
 }
 
 .s-menu-title {
   font-size: 2rem;
-    color: white;
   margin: 0;
   font-weight: 600;
 }
 
 .s-menu-btn-action {
   font-size: 0.85rem;
-  color: rgba(34, 24, 18, 0.7);
+ 
   text-decoration: none;
   border-bottom: 1px solid rgba(34, 24, 18, 0.2);
   padding-bottom: 2px;
@@ -64,7 +45,7 @@
 }
 
 .s-menu-btn-action:hover {
-  color: #b88460;
+
   border-color: #b88460;
 }
 
@@ -80,7 +61,7 @@
   border-radius: 999px;
   border: 1px solid transparent;
   background: transparent;
-  color: white;
+
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -88,7 +69,7 @@
 
 .s-menu-chip.active {
   background: #c5a083;
-  color: #fff;
+  
 }
 
 .s-menu-chip:not(.active):hover {
@@ -146,20 +127,19 @@
 
 .s-menu-info-top h3 {
   font-size: 1.1rem;
-  color: #221812;
+  
   margin: 0;
   font-weight: 500;
 }
 
 .s-menu-price {
   font-size: 1rem;
-  color: #221812;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .s-menu-desc {
   font-size: 0.9rem;
-  color: rgba(34, 24, 18, 0.5);
   line-height: 1.5;
   margin: 0;
 }
