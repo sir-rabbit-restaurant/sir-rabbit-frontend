@@ -178,3 +178,37 @@ body {
   margin-bottom: 10px;
   margin-left: -30px;
 }
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .nav {
+    /* Меняем сетку: лого слева, кнопка справа, меню исчезает */
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .menu {
+    /* Прячем текстовое меню */
+    display: none;
+  }
+
+  .logo-image {
+    /* Уменьшаем логотип для мобилок */
+    width: 180px; 
+    margin-left: -10px; /* Корректируем твой отрицательный отступ */
+    margin-bottom: 0;
+  }
+
+  .header-actions {
+    /* Кнопка будет прижата к правому краю */
+    justify-content: flex-end;
+  }
+
+  .btn-sm {
+    /* Делаем кнопку чуть компактнее */
+    padding: 10px 16px;
+    font-size: 1.1rem;
+  }
+}

@@ -100,20 +100,48 @@
   
 }
 
+@media (max-width: 768px) {
+  /* ... предыдущие стили ... */
 
-/* Адаптивность для мобилок */
-@media (max-width: 992px) {
-  .s-contacts-grid {
-    grid-template-columns: 1fr;
+  .s-contacts {
+    padding: 60px 0; /* Уменьшаем вертикальные отступы */
   }
-  
+
+  .s-contacts-head {
+    padding: 0 16px; /* Боковые отступы для заголовка */
+    margin-bottom: 32px;
+    text-align: center; /* Центрируем заголовок для мобилки */
+  }
+
+  .s-contacts-title {
+    font-size: 1.8rem; /* Чуть меньше шрифт */
+  }
+
+  .s-contacts-grid {
+    /* Переключаем сетку в одну колонку */
+    grid-template-columns: 1fr; 
+    gap: 24px;
+    padding: 0 16px;
+  }
+
   .s-contacts-map-wrap {
-    min-height: 300px;
-    order: 2; /* Карту вниз на мобилках */
+    min-height: 300px; /* Уменьшаем высоту карты, чтобы не занимала весь экран */
+    border-radius: 24px; /* Согласуем скругления с другими блоками */
+    order: 2; /* Карту можно пустить после контактов или оставить первой (по вкусу) */
   }
 
   .s-contacts-details {
-    order: 1;
-    padding: 30px;
+    padding: 30px 20px; /* Уменьшаем внутренние паддинги панели */
+    border-radius: 24px;
+    order: 1; /* Текстовые контакты (телефон, адрес) показываем сначала */
+  }
+
+  .contact-value {
+    font-size: 1rem; /* Оптимизируем размер шрифта */
+  }
+
+  /* Чтобы длинные ссылки/email не вылезали за край */
+  .contact-value {
+    word-break: break-word;
   }
 }

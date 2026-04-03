@@ -247,3 +247,89 @@
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 0; /* Уменьшаем гигантские отступы сверху */
+    }
+
+    .hero-grid {
+        /* Переключаем сетку в одну колонку */
+        grid-template-columns: 1fr; 
+        gap: 16px;
+    }
+
+    .hero-gallery {
+        /* Уменьшаем высоту картинки на мобилках */
+        min-height: 350px; 
+        order: 1; /* Галерея идет первой */
+    }
+
+    .hero-info {
+        min-height: auto;
+        padding: 30px 20px; /* Уменьшаем внутренние падинги */
+        order: 2; /* Текст идет под галереей */
+        text-align: center; /* Центрируем текст для красоты */
+    }
+
+    .hero-info .badge {
+        margin-bottom: 10px; /* Исправляем твой отрицательный маржин */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-info h1 {
+        font-size: 2rem; /* Уменьшаем заголовок */
+    }
+
+    .brand-name {
+        font-size: 2.2rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        justify-content: center; /* Центрируем кнопки */
+        margin-top: 0;
+        padding-top: 20px; /* Убираем лишние 100px падинга */
+    }
+
+    /* Прячем стрелки навигации на мобилках (неудобно тыкать) */
+    /* Либо оставляем, но уменьшаем */
+    .hero-gallery-nav {
+        display: flex; 
+        left: 10px;
+        right: 10px;
+        pointer-events: none;
+    }
+
+    .hero-gallery-arrow {
+        width: 35px;   /* Уменьшили с 46px */
+        height: 35px;  /* Уменьшили с 46px */
+        font-size: 1rem; /* Уменьшили иконку/текст внутри */
+        background: rgba(0, 0, 0, 0.3); /* Сделали чуть темнее для контраста на фото */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+    }
+
+    
+   
+    .hero-gallery-dots span {
+        width: 6px;
+        height: 6px;
+    }
+}
+    /* Декоративные элементы (черви/пики) */
+    .section::after, .section::before {
+        font-size: 10rem; /* Уменьшаем огромные символы */
+        right: -10%;
+        bottom: -10%;
+    }
+

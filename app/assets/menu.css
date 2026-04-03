@@ -140,3 +140,70 @@
   margin: 0;
   color: var(--text-2);
 }
+
+@media (max-width: 768px) {
+
+  .s-menu {
+    padding: 60px 0; /* Уменьшаем вертикальные отступы секции */
+  }
+
+  /* Шапка меню: заголовок и кнопка в колонку */
+  .s-menu-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 0 16px; /* Внутренний отступ для мобилки */
+  }
+
+  .s-menu-container {
+    width: 100%;
+    overflow: hidden; /* Чтобы скролл фильтров не раздувал всю страницу */
+  }
+  
+  .s-menu-title {
+    font-size: 1.7rem;
+  }
+
+  /* ФИЛЬТРЫ: делаем горизонтальный скролл, чтобы не переносились */
+  .s-menu-filters {
+    display: flex;
+    flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+    overflow-x: auto;  /* Включаем горизонтальную прокрутку */
+    -webkit-overflow-scrolling: touch; /* Плавность для iOS */
+    padding: 10px 16px; /* Отступы, чтобы кнопки не прилипали к краям */
+    margin: 0 -16px 20px -16px; /* Отрицательный маржин, чтобы скролл шел от края до края экрана */
+    gap: 12px;
+  }
+
+  .s-menu-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .s-menu-chip {
+    flex-shrink: 0; 
+    white-space: nowrap; /* Текст внутри кнопки всегда в одну строку */
+    padding: 10px 20px;
+  }
+
+  /* СЕТКА: переходим на 1 колонку */
+  .s-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  /* КАРТОЧКА: адаптируем высоту картинки */
+  .s-menu-image-wrap {
+    height: 200px;
+  }
+
+  .s-menu-card {
+    border-radius: 24px; /* Чуть меньше скругление для узких экранов */
+  }
+
+  .s-menu-info {
+    padding: 20px;
+  }
+}
+

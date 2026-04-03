@@ -1,6 +1,6 @@
 <template> 
 
-    <section class="s-contacts">
+    <section class="s-contacts ">
   <div class="s-contacts-container">
     
     <!-- Заголовок секции -->
