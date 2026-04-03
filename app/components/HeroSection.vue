@@ -36,8 +36,8 @@
 
 
       <div class="hero-info reveal delay-1">
-        <div class="badge">Ресторан • Бар • Караоке</div>
         <h1><span class="brand-name">Сэр Кролик</span> — место для красивых вечеров</h1>
+        <span class="badge">Ресторан • Бар • Караоке</span>
         <div class="hero-actions reveal delay-2">
           <a href="#menu" class="btn btn-secondary">Посмотреть меню</a>
           <a href="https://club-cafe.ru/reserve" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Забронировать</a>
