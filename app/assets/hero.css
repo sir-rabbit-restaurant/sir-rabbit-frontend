@@ -60,6 +60,7 @@
     backdrop-filter: blur(14px);
     background: #D8D1C8;
     box-shadow: 0 20px 50px rgba(138, 104, 76, 0.12);
+    
 }
 
 .hero-gallery {
@@ -155,6 +156,7 @@
     gap: 25px;
     position: relative;
     overflow: hidden;
+    
 }
 
 .hero-info .badge {

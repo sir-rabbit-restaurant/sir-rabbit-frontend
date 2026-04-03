@@ -3,9 +3,8 @@
 }
 
 .s-contacts-container {
-  max-width: 1200px;
+  max-width: 1388px;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 /* ЗАГОЛОВОК */
@@ -35,7 +34,7 @@
 
 /* КАРТА */
 .s-contacts-map-wrap {
-  background: #f1ede8;
+  background: var(--bg-2);
   border-radius: 34px; /* Крупное скругление как в Hero */
   min-height: 450px;
   overflow: hidden;
@@ -64,16 +63,16 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: #fff;
+  color: var(--accent);
+  background: var(--bg-2);
   padding: 40px;
   border-radius: 34px;
-  border: 1px solid rgba(138, 104, 76, 0.08);
   box-shadow: 0 10px 40px rgba(34, 24, 18, 0.03);
 }
 
 .contacts-card {
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(138, 104, 76, 0.08);
+  border-bottom: 1px solid rgba(138, 104, 76, 0.2);
 }
 
 .contacts-card:last-child {
@@ -96,6 +95,8 @@
   font-style: normal;
   text-decoration: none;
   line-height: 1.5;
+  
+  
 }
 
 
