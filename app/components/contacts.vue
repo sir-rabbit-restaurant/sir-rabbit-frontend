@@ -34,8 +34,8 @@
         <div class="contacts-card">
           <span class="contact-label">График</span>
           <div class="contact-value">
-            Пн–Чт 12:00–00:00 <br>
-            Пт–Сб 12:00–05:00
+            Пн–Сб 12:00–05:00 <br>
+            Вс 12:00–23:00
           </div>
         </div>
       </div>
