@@ -1,6 +1,6 @@
 <template>  
 <section class="hero">
-    <div class="container hero-grid">
+    <div class="container hero-grid section">
       <div class="hero-gallery reveal">
         <div class="hero-gallery-track">
           <div 

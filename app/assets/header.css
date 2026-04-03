@@ -16,7 +16,7 @@
 --primary: #828ef7;
 --secondary: #5e0a9f;
 --accent: #d63bf3;
-
+--text-2: color-mix(in srgb, var(--text) 80%, black);
   --bg: var(--background);
   --primary-color: var(--primary);
   --secondary-color: var(--secondary);
@@ -38,6 +38,7 @@
 body {
   background-color: var(--bg);
   color: var(--text);
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -118,7 +119,7 @@ body {
   font-weight: 600;
   transition:
     transform 0.28s ease,
-    box-shadow 0.28s ease,
+    
     border-color 0.28s ease,
     background 0.28s ease;
   cursor: pointer;
@@ -148,13 +149,13 @@ body {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(120, 86, 61, 0.1);
+  
 }
 
 .btn-primary {
   background: var(--primary-color);
+  color: var(--bg);
   
-  box-shadow: 0 16px 36px rgba(184, 132, 96, 0.16);
 }
 
 .btn-sm {
