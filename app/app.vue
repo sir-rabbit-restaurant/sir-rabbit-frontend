@@ -14,18 +14,17 @@ const { data: siteInfo, pending } = await useAsyncData('site_info', () =>
   getItems({
     collection: 'site_info',
     params: {
-      // Твои поля из Directus
       fields: ['id', 'name', 'address', 'contacts', 'links', 'logo', 'yandex_maps_iframe', 'schedule'],
     }
   })
-);  
+);
 
-// Создаем удобную вычисляемую переменную, чтобы не писать каждый раз [0]
+
 const info = computed(() => siteInfo.value || null);
 
 const config = useRuntimeConfig();
 const getImageUrl = (id) => {
   console.log(siteInfo.value.logo);
-  return id ? `${config.public.directus.url}/assets/${id}` : null;
+  return id ? `${config.public.directus.url}/assets/${id}?quality=10` : null;
 }
 </script>
