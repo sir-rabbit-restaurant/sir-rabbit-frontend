@@ -1,8 +1,8 @@
 <template>
-  <TheHeader :name="info?.name" :logo="getImageUrl(siteInfo.logo)" />
-  <HeroSection />
+  <TheHeader :logo="getImageUrl(siteInfo.logo)" />
+  <HeroSection :name="info?.name" />
   <MenuSection />
-  <Contacts />
+  <Contacts :schedule="info?.schedule":address="info?.address" :phone="info?.contacts" :map="info?.yandex_maps_iframe" />
   <NuxtPage />
 </template>
 

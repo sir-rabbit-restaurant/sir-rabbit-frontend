@@ -96,6 +96,7 @@
   font-style: normal;
   text-decoration: none;
   line-height: 1.5;
+  white-space: pre-line;
   
   
 }
@@ -138,6 +139,7 @@
 
   .contact-value {
     font-size: 1rem; /* Оптимизируем размер шрифта */
+    
   }
 
   /* Чтобы длинные ссылки/email не вылезали за край */
