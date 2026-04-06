@@ -1,5 +1,5 @@
 <script setup>
-// Принимаем данные от родителя
+
 defineProps({
   address: String,
   phone: String, Array,
@@ -15,7 +15,7 @@ defineProps({
   <section class="s-contacts ">
     <div class="s-contacts-container">
 
-      <!-- Заголовок секции -->
+      
       <div class="s-contacts-head">
         <span class="s-contacts-subtitle">Контакты</span>
         <h2 class="s-contacts-title">Как нас найти</h2>
@@ -23,8 +23,8 @@ defineProps({
 
       <div class="s-contacts-grid">
         <!-- ЛЕВАЯ КОЛОНКА: КАРТА -->
-        <div v-if="mapCode" class="s-contacts-map-wrap" v-html="mapCode"></div>
-        <div v-else class="map-placeholder">Карта загружается...</div>
+        <div class="s-contacts-map-wrap" v-html="mapCode"></div>
+       
 
         <!-- ПРАВАЯ КОЛОНКА: ИНФО-КАРТОЧКИ -->
         <div class="s-contacts-details">
