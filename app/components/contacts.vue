@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import { ContactName, type Contact } from "~/models";
+import { contactLabel } from "~/utils";
+
 defineProps<{
     address: string;
     schedule: string;
     mapCode: string;
     contacts: Contact[];
+
+
 }>();
 
-const contactLabel = (c: Contact): string => {
-    switch (c.name) {
-        case ContactName.PHONE:
-            return "Телефон";
-        case ContactName.EMAIL:
-            return "Email";
-        default:
-            throw new Error(`Unknown contact name: ${c.name}`);
-    }
-};
 </script>
 
 <template>

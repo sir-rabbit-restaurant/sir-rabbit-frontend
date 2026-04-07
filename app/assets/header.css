@@ -33,12 +33,13 @@
   --container: 1400px;
   --accent-font: "Meow Script", cursive;
   color-scheme: light;
+  --font: "Inter", sans-serif;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font);
 }
 
 .container {
@@ -123,7 +124,7 @@ body {
   margin-bottom: 10px;
   margin-left: -30px;
 }
-
+;
 /* Мобильная адаптация */
 @media (max-width: 768px) {
   .nav {
