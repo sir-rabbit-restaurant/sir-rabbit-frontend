@@ -9,6 +9,12 @@
         :contacts="contacts"
         :map-code="siteInfo.yandex_maps_iframe"
     />
+    <TheFooter v-if="siteInfo && contacts && links"
+        :schedule="siteInfo.schedule"
+        :address="siteInfo.address"
+        :contacts="contacts"
+        :links="links"        
+        />
     <NuxtPage />
 </template>
 

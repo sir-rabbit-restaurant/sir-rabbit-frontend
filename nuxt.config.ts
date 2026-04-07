@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "~/assets/menu.css",
     "~/assets/contacts.css",
     "~/assets/buttons.css",
+    "~/assets/footer.css",
   ],
   modules: ["nuxt-directus"],
   directus: {
