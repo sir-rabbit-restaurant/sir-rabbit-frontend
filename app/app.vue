@@ -1,39 +1,33 @@
 <template>
-  <TheHeader :logo="getImageUrl(siteInfo.logo)" />
-  <HeroSection :name="info?.name" />
-  <MenuSection />
-  <Contacts :schedule="info?.schedule" :address="info?.address" :phone="info?.contacts"
-    :map-code="info?.yandex_maps_iframe" />
-  <NuxtPage />
+    <TheHeader v-if="siteInfo" :logo="getImageUrl(siteInfo.logo)" />
+    <HeroSection v-if="siteInfo" :name="siteInfo.name" />
+    <MenuSection />
+    <Contacts
+        v-if="siteInfo && contacts"
+        :schedule="siteInfo.schedule"
+        :address="siteInfo.address"
+        :contacts="contacts"
+        :map-code="siteInfo.yandex_maps_iframe"
+    />
+    <NuxtPage />
 </template>
 
-<script setup>
-const { getItems } = useDirectusItems();
+<script setup lang="ts">
+import type { SiteInfo, Link, Contact } from "./models";
+
+const { getItems, getSingletonItem } = useDirectusItems();
 
 // Вызываем данные. Называем переменную 'siteData', чтобы не путать с меню
-const { data: siteInfo, pending } = await useAsyncData('site_info', () =>
-  getItems({
-    collection: 'site_info',
-    params: {
-      fields: ['id', 'name', 'address', 'contacts', 'links', 'logo', 'yandex_maps_iframe', 'schedule'],
-    }
-    
-  })
-
+const { data: siteInfo, pending } = await useAsyncData("site_info", () =>
+    getSingletonItem<SiteInfo>({
+        collection: "site_info",
+    }),
 );
 
-
-
-
-
-const info = computed(() => siteInfo.value|| null);
-
-const config = useRuntimeConfig();
-const getImageUrl = (id) => {
-  console.log(siteInfo.value.logo);
-  return id ? `${config.public.directus.url}/assets/${id}?quality=10` : null;
-}
-
-console.log('--- ДАННЫЕ ИЗ DIRECTUS ---');
-console.log('Объект целиком:', info?.yandex_maps_iframe);
+const { data: links } = await useAsyncData("links", () =>
+    getItems<Link>({ collection: "link" }),
+);
+const { data: contacts } = await useAsyncData("contacts", () =>
+    getItems<Contact>({ collection: "contact" }),
+);
 </script>
