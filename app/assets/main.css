@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+    --color-text: #dcdffd;
+    --color-text-2: color-mix(in srgb, var(--text) 80%, black);
+    --color-background: #02031a;
+    --color-background-2: rgba(216, 185, 156, 0.05);
+    --color-primary: #828ef7;
+    --color-secondary: #5e0a9f;
+    --color-accent: #d63bf3;
+}
+
+:root {
+    --bg: var(--background);
+    --primary-color: var(--primary);
+    --secondary-color: var(--secondary);
+    --bg-2: rgba(216, 185, 156, 0.05);
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-strong: rgba(84, 81, 81, 0.92);
+    --border: rgba(138, 104, 76, 0.1);
+    --muted: rgba(76, 58, 46, 0.74);
+    --accent: #d8b28a;
+    --accent-2: #b88460;
+    --accent-3: #f5dfc7;
+    --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
+    --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
+    --container: 1400px;
+    --accent-font: "Meow Script", cursive;
+    color-scheme: light;
+}

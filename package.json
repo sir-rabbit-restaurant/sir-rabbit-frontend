@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@directus/sdk": "^21.2.2",
+    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^25.5.2",
     "nuxt": "^4.4.2",
     "nuxt-directus": "^5.7.0",
-    "save-dev": "^0.0.1-security"
+    "save-dev": "^0.0.1-security",
+    "tailwindcss": "^4.2.2"
   }
 }
