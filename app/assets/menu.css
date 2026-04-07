@@ -47,16 +47,9 @@
 
 /* ФИЛЬТРЫ (ЧИПСЫ) */
 .s-menu-filters {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 50px;
-    overflow-x: scroll;
 }
 
 .s-menu-chip {
-    padding: 8px 20px;
-    border-radius: 999px;
-    border: none;
     /*border: 1px solid transparent;*/
     background: transparent;
     cursor: pointer;

@@ -1,3 +1,3 @@
 <template>
-    Здесь будет меню.
+    <MenuSection :show-full-list="true" />
 </template>

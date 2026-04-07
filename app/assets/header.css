@@ -1,159 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 ;
-  color: inherit;
-  text-decoration: none;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
 
 :root {
-
-  --text: #dcdffd;
---background: #02031a;
---primary: #828ef7;
---secondary: #5e0a9f;
---accent: #d63bf3;
---text-2: color-mix(in srgb, var(--text) 80%, black);
-  --bg: var(--background);
-  --primary-color: var(--primary);
-  --secondary-color: var(--secondary);
-  --bg-2: rgba(216, 185, 156, 0.05);
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(84, 81, 81, 0.92);
-  --border: rgba(138, 104, 76, 0.1);
-  --muted: rgba(76, 58, 46, 0.74);
-  --accent: #d8b28a;
-  --accent-2: #b88460;
-  --accent-3: #f5dfc7;
-  --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
-  --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
-  --container: 1400px;
-  --accent-font: "Meow Script", cursive;
-  color-scheme: light;
+    --text: #dcdffd;
+    --background: #02031a;
+    --primary: #828ef7;
+    --secondary: #5e0a9f;
+    --accent: #d63bf3;
+    --text-2: color-mix(in srgb, var(--text) 80%, black);
+    --bg: var(--background);
+    --primary-color: var(--primary);
+    --secondary-color: var(--secondary);
+    --bg-2: rgba(216, 185, 156, 0.05);
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-strong: rgba(84, 81, 81, 0.92);
+    --border: rgba(138, 104, 76, 0.1);
+    --muted: rgba(76, 58, 46, 0.74);
+    --accent: #d8b28a;
+    --accent-2: #b88460;
+    --accent-3: #f5dfc7;
+    --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
+    --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
+    --container: 1400px;
+    --accent-font: "Meow Script", cursive;
+    color-scheme: light;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: "Inter", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
 }
 
 .container {
-  width: min(var(--container), calc(100% - 32px));
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  
+    width: min(var(--container), calc(100% - 32px));
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  background-color: var(--bg-2);
-  z-index: 80;
-  backdrop-filter: blur(18px);
-  border-bottom: 2px solid rgba(138, 104, 76, 0.08);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-2);
+    z-index: 80;
+    backdrop-filter: blur(18px);
+    border-bottom: 2px solid rgba(138, 104, 76, 0.08);
 }
 
 .header-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 1.6rem;
-  font-family: var(--accent-font);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.6rem;
+    font-family: var(--accent-font);
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
 }
 
 .menu {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  margin-left: auto;
-  font-size: 1.6rem;
-  font-family: var(--accent-font);
- 
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-left: auto;
+    font-size: 1.6rem;
+    font-family: var(--accent-font);
 }
 
 .menu a {
-  font-family: var(--accent-font);
-  position: relative;
-  transition: color .25s ease;
+    font-family: var(--accent-font);
+    position: relative;
+    transition: color 0.25s ease;
 }
 
 .menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #b88460, transparent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.25s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b88460, transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
 }
-
-
 
 .menu a:hover::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
-
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
 .logo-image {
-  width: 300px;
-  display: block;
-  object-fit: contain;
-  margin-bottom: 10px;
-  margin-left: -30px;
+    width: 300px;
+    display: block;
+    object-fit: contain;
+    margin-bottom: 10px;
+    margin-left: -30px;
 }
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-  .nav {
-    /* Меняем сетку: лого слева, кнопка справа, меню исчезает */
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-  }
+    .nav {
+        /* Меняем сетку: лого слева, кнопка справа, меню исчезает */
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
 
-  .menu {
-    /* Прячем текстовое меню */
-    display: none;
-  }
+    .menu {
+        /* Прячем текстовое меню */
+        display: none;
+    }
 
-  .logo-image {
-    /* Уменьшаем логотип для мобилок */
-    width: 180px; 
-    margin-left: -10px; /* Корректируем твой отрицательный отступ */
-    margin-bottom: 0;
-  }
+    .logo-image {
+        /* Уменьшаем логотип для мобилок */
+        width: 180px;
+        margin-left: -10px; /* Корректируем твой отрицательный отступ */
+        margin-bottom: 0;
+    }
 
-  .header-actions {
-    /* Кнопка будет прижата к правому краю */
-    justify-content: flex-end;
-  }
+    .header-actions {
+        /* Кнопка будет прижата к правому краю */
+        justify-content: flex-end;
+    }
 
-  .btn-sm {
-    /* Делаем кнопку чуть компактнее */
-    padding: 10px 16px;
-    font-size: 1.1rem;
-  }
+    .btn-sm {
+        /* Делаем кнопку чуть компактнее */
+        padding: 10px 16px;
+        font-size: 1.1rem;
+    }
 }
