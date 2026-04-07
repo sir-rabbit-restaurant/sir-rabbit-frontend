@@ -1,7 +1,6 @@
 <template>
     <section class="s-menu">
         <div class="s-menu-container">
-
             <!-- Шапка: Заголовок и кнопка -->
             <div class="s-menu-header">
                 <div class="s-menu-title-block">
@@ -12,58 +11,93 @@
 
             <!-- Фильтры (Чипсы) -->
             <div class="s-menu-filters">
-                <button class="s-menu-chip active">Все</button>
-                <button class="s-menu-chip">Закуски</button>
-                <button class="s-menu-chip">Горячее</button>
-                <button class="s-menu-chip">Десерты</button>
-                <button class="s-menu-chip">Бар</button>
+                <button
+                    class="s-menu-chip"
+                    :class="activeCategory === undefined ? 'active' : ''"
+                    @click="filterByCategory(undefined)"
+                >
+                    Все
+                </button>
+                <button
+                    v-for="c in categories"
+                    class="s-menu-chip"
+                    :class="activeCategory === c.id ? 'active' : ''"
+                    @click="filterByCategory(c.id)"
+                >
+                    {{ c.name }}
+                </button>
             </div>
 
             <!-- Сетка карточек -->
             <div class="s-menu-grid">
-
                 <!-- Карточка 1 -->
-                <div v-for="item in menuItems" :key="item.id" class="s-menu-card">
+                <div
+                    v-for="item in menuItems"
+                    :key="item.id"
+                    class="s-menu-card"
+                >
                     <div class="s-menu-image-wrap">
-                        <img :src="item.image" :alt="item.name">
+                        <!-- <img :src="item.image" :alt="item.name" /> -->
                     </div>
                     <div class="s-menu-info">
                         <div class="s-menu-info-top">
                             <h3>{{ item.name }}</h3>
-                            <span class="s-menu-price">{{ item.price }} ₽</span>
+                            <span class="s-menu-price"
+                                >{{
+                                    new Intl.NumberFormat("ru-RU", {
+                                        style: "currency",
+                                        currency: "RUB",
+                                    }).format(item.price)
+                                }}
+                            </span>
                         </div>
-                        <p class="s-menu-desc">Свежий лосось, авокадо, цитрусовая заправка и тонкий баланс текстур.</p>
+                        <div
+                            class="s-menu-desc"
+                            v-html="item.description"
+                        ></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
-
 </template>
 
-// https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80
+<script setup lang="ts">
+const { getItems } = useDirectusItems();
 
-<script setup>
-const menuItems = [
-  { 
-    id: 1, 
-    name: 'Пицца Маргарита', 
-    price: 550, 
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80' 
-  },
-  { 
-    id: 2, 
-    name: 'Паста Карбонара', 
-    price: 480, 
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80' 
-  },
-  { 
-    id: 3, 
-    name: 'Салат Цезарь', 
-    price: 420, 
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80' 
-  }
-]
+type Dish = {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    weight: number;
+};
+type Category = {
+    id: string;
+    name: string;
+    dishes: Dish[];
+};
+
+const { data: categories } = await useAsyncData("categories", () =>
+    getItems<Category>({
+        collection: "dish_category",
+        params: { fields: ["*", "dishes.*"] },
+    }),
+);
+
+const activeCategory = ref<string | undefined>(undefined);
+
+const filterByCategory = (categoryId: string | undefined) => {
+    activeCategory.value = categoryId;
+};
+
+const menuItems = computed(() => {
+    if (activeCategory.value) {
+        return (
+            categories.value?.find((c) => c.id === activeCategory.value)
+                ?.dishes ?? []
+        );
+    }
+    return categories.value?.flatMap((c) => c.dishes) ?? [];
+});
 </script>
