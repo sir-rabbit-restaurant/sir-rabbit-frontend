@@ -33,7 +33,7 @@
                 <button
                     v-for="c in categories"
                     :key="c.id"
-                    class="flex whitespace-nowrap w-fit items-center justify-center border-primary px-6 py-2 border-2 rounded-full transition-all duration-300"
+                    class="flex whitespace-nowrap w-fit items-center justify-center border-primary/50 px-6 py-2 border-2 rounded-full transition-all duration-300"
                     :class="
                         activeCategory === c.id
                             ? 'bg-primary '
@@ -53,7 +53,7 @@
                         ? menuItems
                         : menuItems.slice(0, 4)"
                     :key="item.id"
-                    class="flex flex-col rounded-[34px] overflow-hidden bg-background-2 shadow-2xl"
+                    class="flex flex-col rounded-[34px] overflow-hidden  bg-white/5 border border-transparent border-white/10 transition-all"
                 >
                     <div
                         class="relative h-[200px] md:h-[240px] rounded-[34px] overflow-hidden bg-gradient-to-br from-[#f3f3f3] to-[#e2e2e2]"
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center pt-10">
                 <NuxtLink
                     class="btn btn-primary"
                     to="/menu"

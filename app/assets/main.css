@@ -5,6 +5,7 @@
     --color-text-2: color-mix(in srgb, var(--text) 80%, black);
     --color-background: #02031a;
     --color-background-2: rgba(216, 185, 156, 0.05);
+    --color-background-3: var(--bg-3);
     --color-primary: #828ef7;
     --color-secondary: #5e0a9f;
     --color-accent: #d63bf3;

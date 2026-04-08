@@ -37,7 +37,7 @@ defineProps<{ name: string }>();
                         class="hero-gallery-slide"
                         :class="{ 'is-active': index === activeIndex }"
                     >
-                        <img :src="getImageUrl(slide.image)" />
+                        <img :src="getImageUrl(slide.image, { quality: 80 })" />
                     </div>
                 </div>
 
