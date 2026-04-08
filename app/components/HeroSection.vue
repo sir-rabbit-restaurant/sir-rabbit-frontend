@@ -80,9 +80,13 @@ defineProps<{ name: string }>();
                 </h1>
                 <span class="badge">Ресторан • Бар • Караоке</span>
                 <div class="hero-actions reveal delay-2">
-                    <a href="#menu" class="btn btn-secondary"
-                        >Посмотреть меню</a
-                    >
+                    <NuxtLink  to="/menu" class="btn btn-secondary"
+                        >Посмотреть меню  
+                        
+                        </NuxtLink> 
+                    
+                                   
+    
                     <a
                         href="https://club-cafe.ru/reserve"
                         target="_blank"

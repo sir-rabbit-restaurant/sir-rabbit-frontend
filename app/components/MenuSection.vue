@@ -94,9 +94,10 @@
                 <NuxtLink
                     class="btn btn-primary"
                     to="/menu"
-                    v-if="!showFullList"
-                    >Смотреть все</NuxtLink
-                >
+                    v-if="!showFullList">
+                    Смотреть все
+                    
+                </NuxtLink>
             </div>
         </div>
     </section>
