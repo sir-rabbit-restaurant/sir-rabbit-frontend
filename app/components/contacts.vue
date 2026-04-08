@@ -14,8 +14,16 @@ defineProps<{
 </script>
 
 <template>
-    <section class="s-contacts">
+    <section class="s-contacts relative z-1" id="contacts">
+        <div class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[30deg] pointer-events-none">   
+            ♠
+            
+        </div> 
+        <div class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[15deg] pointer-events-none">   
+            ♥
+        </div>
         <div class="s-contacts-container">
+            
             <div class="s-contacts-head">
                 <span class="s-contacts-subtitle">Контакты</span>
                 <h2 class="s-contacts-title">Как нас найти</h2>

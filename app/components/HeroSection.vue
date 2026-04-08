@@ -27,7 +27,16 @@ defineProps<{ name: string }>();
 </script>
 
 <template>
-    <section class="hero">
+    <section class="hero z-1" id="about">
+        <div class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[15deg] pointer-events-none">   
+            ♥
+        </div>
+
+        <div class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[30deg] pointer-events-none">   
+            ♠
+            
+        </div>       
+        
         <div v-if="slides" class="container hero-grid section">
             <div class="hero-gallery reveal">
                 <div class="hero-gallery-track">

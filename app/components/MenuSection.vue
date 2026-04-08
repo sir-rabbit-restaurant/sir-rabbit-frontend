@@ -1,5 +1,16 @@
+
+
 <template>
-    <section class="relative py-14 md:py-24 font-inherit">
+    <section class="relative py-14 md:py-24 font-inherit z-1" id="menu" >
+        <div class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[-20deg] pointer-events-none">   
+            ♦
+        </div>
+
+        <div class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[-50deg] pointer-events-none">   
+            ♣
+            
+        </div>
+        
         <div class="max-w-347 mx-auto px-4 md:px-0">
             <!-- Шапка -->
             <div
