@@ -58,12 +58,13 @@
                     <div
                         class="relative h-[200px] md:h-[240px] rounded-[34px] overflow-hidden bg-gradient-to-br from-[#f3f3f3] to-[#e2e2e2]"
                     >
-                        <!-- <img
-                            v-if="item.image"
-                            :src="item.image"
-                            :alt="item.name"
+                        
+                        <img
+                            
+                            src="/placeholder.png"
+                            alt="Изображение блюда"
                             class="w-full h-full object-cover"
-                        /> -->
+                        />
                     </div>
 
                     <div
