@@ -3,10 +3,9 @@
     <NuxtPage />
     <TheFooter
         v-if="siteInfo && contacts && links"
-        :schedule="siteInfo.schedule"
-        :address="siteInfo.address"
         :contacts="contacts"
         :links="links"
+        :info="siteInfo"
     />
 </template>
 

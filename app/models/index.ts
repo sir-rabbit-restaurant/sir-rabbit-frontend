@@ -4,6 +4,9 @@ export type SiteInfo = {
   schedule: string;
   yandex_maps_iframe: string;
   logo: string;
+  company_name: string;
+  company_inn: string;
+  company_kpp: string;
 };
 
 export enum ContactName {
