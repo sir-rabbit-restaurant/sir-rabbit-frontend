@@ -91,7 +91,10 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <NuxtLink class="btn btn-primary" to="/menu"
+                <NuxtLink
+                    class="btn btn-primary"
+                    to="/menu"
+                    v-if="!showFullList"
                     >Смотреть все</NuxtLink
                 >
             </div>

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SiteInfo, Link, Contact } from "./models";
+import type { SiteInfo, Link, Contact, Slide } from "./models";
 
 const { getItems, getSingletonItem } = useDirectusItems();
 
@@ -18,6 +18,11 @@ const { getItems, getSingletonItem } = useDirectusItems();
 const { data: siteInfo } = await useAsyncData("site_info", () =>
     getSingletonItem<SiteInfo>({
         collection: "site_info",
+    }),
+);
+const { data: slides, pending } = await useAsyncData("hero-slides", () =>
+    getItems<Slide>({
+        collection: "gallery_item",
     }),
 );
 

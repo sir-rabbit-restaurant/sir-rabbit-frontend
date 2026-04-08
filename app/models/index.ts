@@ -23,3 +23,8 @@ export type Link = {
   name: string;
   url: string;
 };
+
+export type Slide = {
+  id: number;
+  image: string;
+};
