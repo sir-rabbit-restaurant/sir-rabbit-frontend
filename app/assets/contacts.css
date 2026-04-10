@@ -1,149 +1,146 @@
 .s-contacts {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .s-contacts-container {
-  max-width: 1388px;
-  margin: 0 auto;
+    max-width: 1388px;
+    margin: 0 auto;
 }
 
 /* ЗАГОЛОВОК */
 .s-contacts-head {
-  margin-bottom: 48px;
+    margin-bottom: 48px;
 }
 
 .s-contacts-subtitle {
-  font-size: 0.85rem;
-  display: block;
-  margin-bottom: 8px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .s-contacts-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin: 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* СЕТКА (2 колонки) */
 .s-contacts-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Карта чуть шире */
-  gap: 32px;
-  align-items: stretch;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Карта чуть шире */
+    gap: 32px;
+    align-items: stretch;
 }
 
 /* КАРТА */
 .s-contacts-map-wrap {
-  background: var(--bg-2);
-  border-radius: 34px; /* Крупное скругление как в Hero */
-  min-height: 450px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid rgba(138, 104, 76, 0.1);
+    background: var(--bg-2);
+    border-radius: 34px; /* Крупное скругление как в Hero */
+    min-height: 450px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(138, 104, 76, 0.1);
 }
 
 .map-placeholder {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
 }
 
 .map-pin {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-  filter: grayscale(1);
-  opacity: 0.5;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    filter: grayscale(1);
+    opacity: 0.5;
 }
 
 /* ПРАВАЯ ПАНЕЛЬ С КАРТОЧКАМИ */
 .s-contacts-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: var(--accent);
-  background: var(--bg-2);
-  padding: 40px;
-  border-radius: 34px;
-  box-shadow: 0 10px 40px rgba(34, 24, 18, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--accent);
+    background: var(--bg-2);
+    padding: 40px;
+    border-radius: 34px;
+    box-shadow: 0 10px 40px rgba(34, 24, 18, 0.03);
 }
 
 .contacts-card {
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(138, 104, 76, 0.2);
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(138, 104, 76, 0.2);
 }
 
 .contacts-card:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .contact-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-  color: var(--text)
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    color: var(--text);
 }
 
 .contact-value {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 500;
-  font-style: normal;
-  text-decoration: none;
-  line-height: 1.5;
-  white-space: pre-line;
-  
-  
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1.5;
+    white-space: pre-line;
 }
 
 @media (max-width: 768px) {
-  /* ... предыдущие стили ... */
+    /* ... предыдущие стили ... */
 
-  .s-contacts {
-    padding: 60px 0; /* Уменьшаем вертикальные отступы */
-  }
+    .s-contacts {
+        padding: 60px 0; /* Уменьшаем вертикальные отступы */
+    }
 
-  .s-contacts-head {
-    padding: 0 16px; /* Боковые отступы для заголовка */
-    margin-bottom: 32px;
-    text-align: center; /* Центрируем заголовок для мобилки */
-  }
+    .s-contacts-head {
+        padding: 0 16px; /* Боковые отступы для заголовка */
+        margin-bottom: 32px;
+        text-align: center; /* Центрируем заголовок для мобилки */
+    }
 
-  .s-contacts-title {
-    font-size: 1.8rem; /* Чуть меньше шрифт */
-  }
+    .s-contacts-title {
+        font-size: 1.8rem; /* Чуть меньше шрифт */
+    }
 
-  .s-contacts-grid {
-    /* Переключаем сетку в одну колонку */
-    grid-template-columns: 1fr; 
-    gap: 24px;
-    padding: 0 16px;
-  }
+    .s-contacts-grid {
+        /* Переключаем сетку в одну колонку */
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 16px;
+    }
 
-  .s-contacts-map-wrap {
-    min-height: 300px; /* Уменьшаем высоту карты, чтобы не занимала весь экран */
-    border-radius: 24px; /* Согласуем скругления с другими блоками */
-    order: 2; /* Карту можно пустить после контактов или оставить первой (по вкусу) */
-  }
+    .s-contacts-map-wrap {
+        min-height: 300px; /* Уменьшаем высоту карты, чтобы не занимала весь экран */
+        border-radius: 24px; /* Согласуем скругления с другими блоками */
+        order: 2; /* Карту можно пустить после контактов или оставить первой (по вкусу) */
+    }
 
-  .s-contacts-details {
-    padding: 30px 20px; /* Уменьшаем внутренние паддинги панели */
-    border-radius: 24px;
-    order: 1; /* Текстовые контакты (телефон, адрес) показываем сначала */
-  }
+    .s-contacts-details {
+        padding: 30px 20px; /* Уменьшаем внутренние паддинги панели */
+        border-radius: 24px;
+        order: 1; /* Текстовые контакты (телефон, адрес) показываем сначала */
+    }
 
-  .contact-value {
-    font-size: 1rem; /* Оптимизируем размер шрифта */
-    
-  }
+    .contact-value {
+        font-size: 1rem; /* Оптимизируем размер шрифта */
+    }
 
-  /* Чтобы длинные ссылки/email не вылезали за край */
-  .contact-value {
-    word-break: break-word;
-  }
+    /* Чтобы длинные ссылки/email не вылезали за край */
+    .contact-value {
+        word-break: break-word;
+    }
 }

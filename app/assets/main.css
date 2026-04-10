@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico");
 @import "tailwindcss";
 
 @theme {
+    --font-cursive: "Meow Script", cursive;
     --color-text: #dcdffd;
     --color-text-2: color-mix(in srgb, var(--text) 80%, black);
     --color-background: #02031a;
@@ -10,8 +12,14 @@
     --color-secondary: #5e0a9f;
     --color-accent: #d63bf3;
 }
-
 :root {
+    --text: #dcdffd;
+
+    --background: #02031a;
+    --primary: #828ef7;
+    --secondary: #5e0a9f;
+    --accent: #d63bf3;
+    --text-2: color-mix(in srgb, var(--text) 80%, black);
     --bg: var(--background);
     --primary-color: var(--primary);
     --secondary-color: var(--secondary);
@@ -26,6 +34,8 @@
     --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
     --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
     --container: 1400px;
-    --accent-font: "Meow Script", cursive;
+    --accent-font: "Pacifico", cursive;
     color-scheme: light;
+    --font: "Inter", sans-serif;
+    --bg-3: rgba(255, 255, 255, 0.03);
 }

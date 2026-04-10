@@ -27,3 +27,8 @@ tests
 *.md
 .eslintrc.js
 .prettierrc
+
+# Docker
+[Dd]ockerfile
+docker-compose.yml
+.dockerignore

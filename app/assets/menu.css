@@ -6,7 +6,6 @@
     position: relative;
 }
 
-
 .s-menu-container {
     max-width: 1388px;
     margin: 0 auto;
@@ -44,10 +43,6 @@
 
 .s-menu-btn-action:hover {
     border-color: #b88460;
-}
-
-/* ФИЛЬТРЫ (ЧИПСЫ) */
-.s-menu-filters {
 }
 
 .s-menu-chip {

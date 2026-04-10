@@ -11,17 +11,14 @@
 </template>
 
 <script setup lang="ts">
+const { $directus, $readItems } = useNuxtApp();
 import type { SiteInfo, Contact } from "~/models";
 
-const { getItems, getSingletonItem } = useDirectusItems();
-
 const { data: siteInfo } = await useAsyncData("site_info", () =>
-    getSingletonItem<SiteInfo>({
-        collection: "site_info",
-    }),
+    $directus.request<SiteInfo>($readItems("site_info")),
 );
 
 const { data: contacts } = await useAsyncData("contacts", () =>
-    getItems<Contact>({ collection: "contact" }),
+    $directus.request<Contact[]>($readItems("contact")),
 );
 </script>

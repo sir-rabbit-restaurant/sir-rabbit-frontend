@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["@vue/devtools-core", "@vue/devtools-kit", "@directus/sdk"],
+    },
   },
   css: [
     "~/assets/main.css",
@@ -16,14 +19,10 @@ export default defineNuxtConfig({
     "~/assets/buttons.css",
     "~/assets/footer.css",
   ],
-  modules: ["nuxt-directus"],
-  directus: {
-    url: process.env.DIRECTUS_URL,
-  },
   runtimeConfig: {
     public: {
       directus: {
-        // token: process.env.DIRECTUS_TOKEN // Nuxt подхватит это из .env
+        url: process.env.DIRECTUS_URL,
       },
     },
   },

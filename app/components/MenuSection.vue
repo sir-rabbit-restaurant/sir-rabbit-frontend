@@ -1,16 +1,65 @@
+<script setup lang="ts">
+const { $directus, $readItems } = useNuxtApp();
+withDefaults(
+    defineProps<{
+        showFullList?: boolean;
+    }>(),
+    {
+        showFullList: false,
+    },
+);
 
+type Dish = {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    weight: number;
+};
+type Category = {
+    id: string;
+    name: string;
+    dishes: Dish[];
+};
 
+const { data: categories } = await useAsyncData("categories", () =>
+    $directus.request<Category[]>(
+        $readItems("dish_category", {
+            fields: ["*", "dishes.*"],
+        }),
+    ),
+);
+
+const activeCategory = ref<string | undefined>(undefined);
+
+const filterByCategory = (categoryId: string | undefined) => {
+    activeCategory.value = categoryId;
+};
+
+const menuItems = computed(() => {
+    if (activeCategory.value) {
+        return (
+            categories.value?.find((c) => c.id === activeCategory.value)
+                ?.dishes ?? []
+        );
+    }
+    return categories.value?.flatMap((c) => c.dishes) ?? [];
+});
+</script>
 <template>
-    <section class="relative py-14 md:py-24 font-inherit z-1" id="menu" >
-        <div class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[-20deg] pointer-events-none">   
+    <section class="relative py-14 md:py-24 font-inherit z-1" id="menu">
+        <div
+            class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[-20deg] pointer-events-none"
+        >
             ♦
         </div>
 
-        <div class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[-50deg] pointer-events-none">   
+        <div
+            class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[-50deg] pointer-events-none"
+        >
             ♣
-            
         </div>
-        
+
         <div class="max-w-347 mx-auto px-4 md:px-0">
             <!-- Шапка -->
             <div
@@ -64,14 +113,12 @@
                         ? menuItems
                         : menuItems.slice(0, 4)"
                     :key="item.id"
-                    class="flex flex-col rounded-[34px] overflow-hidden  bg-white/5 border border-transparent border-white/10 transition-all"
+                    class="flex flex-col rounded-[34px] overflow-hidden bg-white/5 border border-white/10 transition-all"
                 >
                     <div
-                        class="relative h-[200px] md:h-[240px] rounded-[34px] overflow-hidden bg-gradient-to-br from-[#f3f3f3] to-[#e2e2e2]"
+                        class="relative h-50 md:h-60 rounded-[34px] overflow-hidden bg-linear-to-br from-[#f3f3f3] to-[#e2e2e2]"
                     >
-                        
                         <img
-                            
                             src="/placeholder.png"
                             alt="Изображение блюда"
                             class="w-full h-full object-cover"
@@ -106,9 +153,9 @@
                 <NuxtLink
                     class="btn btn-primary"
                     to="/menu"
-                    v-if="!showFullList">
+                    v-if="!showFullList"
+                >
                     Смотреть все
-                    
                 </NuxtLink>
             </div>
         </div>
@@ -125,51 +172,3 @@
     scrollbar-width: none;
 }
 </style>
-
-<script setup lang="ts">
-withDefaults(
-    defineProps<{
-        showFullList?: boolean;
-    }>(),
-    {
-        showFullList: false,
-    },
-);
-const { getItems } = useDirectusItems();
-
-type Dish = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    weight: number;
-};
-type Category = {
-    id: string;
-    name: string;
-    dishes: Dish[];
-};
-
-const { data: categories } = await useAsyncData("categories", () =>
-    getItems<Category>({
-        collection: "dish_category",
-        params: { fields: ["*", "dishes.*"] },
-    }),
-);
-
-const activeCategory = ref<string | undefined>(undefined);
-
-const filterByCategory = (categoryId: string | undefined) => {
-    activeCategory.value = categoryId;
-};
-
-const menuItems = computed(() => {
-    if (activeCategory.value) {
-        return (
-            categories.value?.find((c) => c.id === activeCategory.value)
-                ?.dishes ?? []
-        );
-    }
-    return categories.value?.flatMap((c) => c.dishes) ?? [];
-});
-</script>

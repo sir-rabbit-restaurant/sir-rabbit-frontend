@@ -1,57 +1,92 @@
-
-
 .footer {
-  background-color: var(--bg-1);
-  color: var(--text);
-  padding: 60px 0 30px;
-  font-size: 1.1rem;
-  font-family: var(--font);
+    background-color: var(--bg-1);
+    color: var(--text);
+    padding: 60px 0 30px;
+    font-size: 1.1rem;
+    font-family: var(--font);
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 20px;
 }
 
 .footer-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .socials a {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 /* Левая колонка */
-.left { text-align: left; gap: 20px; font-family: var(--font);}
-.left a {color: var(--text); font-family: var(--font);}
-.footer-address { font-family: var(--font); opacity: 0.9; }
+.left {
+    text-align: left;
+    gap: 20px;
+    font-family: var(--font);
+}
+.left a {
+    color: var(--text);
+    font-family: var(--font);
+}
+.footer-address {
+    font-family: var(--font);
+    opacity: 0.9;
+}
 
 /* Центральная колонка */
-.center { text-align: center; gap: 20px; }
-.socials { display: flex; justify-content: center; gap: 15px; }
-.legal-info { opacity: 0.9; line-height: 1.6; }
-.policy { text-decoration: underline; color: inherit; }
+.center {
+    text-align: center;
+    gap: 20px;
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.legal-info {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+.policy {
+    text-decoration: underline;
+    color: inherit;
+}
 /* Правая колонка */
-.right { text-align: right; gap: 20px; align-items: flex-end; }
-.footer-schedule { white-space: pre-line}
-
-
+.right {
+    text-align: right;
+    gap: 20px;
+    align-items: flex-end;
+}
+.footer-schedule {
+    white-space: pre-line;
+}
 
 .copyright-disclaimer {
-  text-align: center;
-  opacity: 0.3;
-  font-size: 0.7rem;
-  margin-top: 40px;
-  padding: 0 20px;
+    text-align: center;
+    opacity: 0.3;
+    font-size: 0.7rem;
+    margin-top: 40px;
+    padding: 0 20px;
 }
 
 @media (max-width: 1024px) {
-  .footer-content { flex-direction: column; align-items: center; text-align: center; }
-  .footer-col { text-align: center; align-items: center; }
-  .scroll-top { position: static; margin-bottom: 20px; }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        text-align: center;
+        align-items: center;
+    }
+    .scroll-top {
+        position: static;
+        margin-bottom: 20px;
+    }
 }

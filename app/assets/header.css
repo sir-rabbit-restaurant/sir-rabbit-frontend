@@ -1,38 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
-@import url('https://googleapis.com');
-
-:root {
-
-  --text: #dcdffd;
---background: #02031a;
---primary: #828ef7;
---secondary: #5e0a9f;
---accent: #d63bf3;
---text-2: color-mix(in srgb, var(--text) 80%, black);
-  --bg: var(--background);
-  --primary-color: var(--primary);
-  --secondary-color: var(--secondary);
-  --bg-2: rgba(216, 185, 156, 0.05);
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(84, 81, 81, 0.92);
-  --border: rgba(138, 104, 76, 0.1);
-  --muted: rgba(76, 58, 46, 0.74);
-  --accent: #d8b28a;
-  --accent-2: #b88460;
-  --accent-3: #f5dfc7;
-  --shadow-soft: 0 20px 45px rgba(98, 69, 47, 0.08);
-  --shadow-accent: 0 16px 36px rgba(184, 132, 96, 0.16);
-  --container: 1400px;
-  --accent-font: "Meow Script", cursive;
-  color-scheme: light;
-  --font: "Inter", sans-serif;
-  --bg-3: rgba(255, 255, 255, 0.03);
-}
-
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
 }
 
 .container {
@@ -111,7 +80,6 @@ body {
     margin-bottom: 10px;
     margin-left: -30px;
 }
-;
 /* Мобильная адаптация */
 @media (max-width: 768px) {
     .nav {

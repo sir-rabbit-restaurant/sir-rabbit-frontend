@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import type { Slide } from "~/models";
-const { getItems } = useDirectusItems();
+const { $directus, $readItems } = useNuxtApp();
 const config = useRuntimeConfig();
 
 const { data: slides, pending } = await useAsyncData("hero-slides", () =>
-    getItems<Slide>({
-        collection: "gallery_item",
-    }),
+    $directus.request<Slide[]>($readItems("gallery_item")),
 );
 
 const activeIndex = ref(0);
@@ -28,15 +26,18 @@ defineProps<{ name: string }>();
 
 <template>
     <section class="hero z-1" id="about">
-        <div class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-[15deg] pointer-events-none">   
+        <div
+            class="-z-1 absolute right-[10%] bottom-[20%] text-[100pt] text-secondary opacity-[0.12] rotate-15 pointer-events-none"
+        >
             ♥
         </div>
 
-        <div class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-[30deg] pointer-events-none">   
+        <div
+            class="-z-1 absolute left-[10%] bottom-[50%] text-[100pt] text-secondary opacity-[0.12] rotate-30 pointer-events-none"
+        >
             ♠
-            
-        </div>       
-        
+        </div>
+
         <div v-if="slides" class="container hero-grid section">
             <div class="hero-gallery reveal">
                 <div class="hero-gallery-track">
@@ -89,13 +90,10 @@ defineProps<{ name: string }>();
                 </h1>
                 <span class="badge">Ресторан • Бар • Караоке</span>
                 <div class="hero-actions reveal delay-2">
-                    <NuxtLink  to="/menu" class="btn btn-secondary"
-                        >Посмотреть меню  
-                        
-                        </NuxtLink> 
-                    
-                                   
-    
+                    <NuxtLink to="/menu" class="btn btn-secondary"
+                        >Посмотреть меню
+                    </NuxtLink>
+
                     <a
                         href="https://club-cafe.ru/reserve"
                         target="_blank"
