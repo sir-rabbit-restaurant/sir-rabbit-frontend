@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Принимаем пропсы от app.vue
-defineProps<{ name: string; logo: string }>();
+defineProps<{ logo: string }>();
+const SITE_NAME = "Сэр Крол&к";
 </script>
 
 <template>
@@ -8,18 +8,14 @@ defineProps<{ name: string; logo: string }>();
         <header class="header">
             <div class="container nav">
                 <div class="header-left">
-                    <NuxtLink to="/" class="logo">
+                    <NuxtLink to="/" class="w-fit">
                         <!-- 1. Добавляем v-if, чтобы картинка не грузилась, если ссылки нет -->
                         <img
                             v-if="logo"
                             :src="logo"
-                            :alt="name"
+                            :alt="SITE_NAME"
                             class="logo-image"
                         />
-
-                        <span v-else class="brand-text">{{
-                            name || "Загрузка..."
-                        }}</span>
                     </NuxtLink>
                 </div>
 
