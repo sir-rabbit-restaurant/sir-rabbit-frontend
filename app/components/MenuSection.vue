@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
 const { $directus, $readItems } = useNuxtApp();
 withDefaults(
     defineProps<{
@@ -77,34 +79,46 @@ const menuItems = computed(() => {
 
             <!-- Фильтры (Чипсы) -->
             <div
-                class="flex gap-3 mb-10 overflow-x-auto no-scrollbar -mx-4 px-4 md:mx-0 md:px-0"
+                class="flex gap-3 mb-10 no-scrollbar mx-4 px-4 py-2 md:mx-0 md:px-0"
             >
-                <button
-                    class="flex border-2 whitespace-nowrap px-6 py-2 rounded-full transition-all duration-300 border-secondary"
-                    :class="
-                        activeCategory === undefined
-                            ? 'bg-secondary'
-                            : 'bg-transparent hover:bg-secondary/50'
-                    "
-                    @click="filterByCategory(undefined)"
+                <Swiper
+                    slidesPerView="auto"
+                    class="flex gap-3 overflow-x-auto"
+                    spaceBetween="10"
                 >
-                    Все
-                </button>
-                <button
-                    v-for="c in categories"
-                    :key="c.id"
-                    class="flex whitespace-nowrap w-fit items-center justify-center border-primary/50 px-6 py-2 border-2 rounded-full transition-all duration-300"
-                    :class="
-                        activeCategory === c.id
-                            ? 'bg-primary '
-                            : 'bg-transparent hover:bg-primary/50  '
-                    "
-                    @click="filterByCategory(c.id)"
-                >
-                    <div class="text-center">
-                        {{ c.name }}
-                    </div>
-                </button>
+                    <SwiperSlide class="w-auto!">
+                        <button
+                            class="flex border-2 m-1 whitespace-nowrap px-6 py-2 rounded-full transition-all duration-300 border-secondary"
+                            :class="
+                                activeCategory === undefined
+                                    ? 'bg-secondary'
+                                    : 'bg-transparent hover:bg-secondary/50 focus:outline-secondary focus:outline-2'
+                            "
+                            @click="filterByCategory(undefined)"
+                        >
+                            Все
+                        </button>
+                    </SwiperSlide>
+                    <SwiperSlide
+                        v-for="c in categories"
+                        :key="c.id"
+                        class="w-auto!"
+                    >
+                        <button
+                            class="flex m-1 whitespace-nowrap w-fit items-center justify-center border-primary/50 px-6 py-2 border-2 rounded-full transition-all duration-300"
+                            :class="
+                                activeCategory === c.id
+                                    ? 'bg-primary '
+                                    : 'bg-transparent hover:bg-primary/50  active:bg-primary/80  focus:outline-primary focus:outline-4'
+                            "
+                            @click="filterByCategory(c.id)"
+                        >
+                            <div class="text-center">
+                                {{ c.name }}
+                            </div>
+                        </button>
+                    </SwiperSlide>
+                </Swiper>
             </div>
             <!-- Сетка карточек -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-8">
