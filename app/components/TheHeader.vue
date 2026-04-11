@@ -3,6 +3,8 @@ defineProps<{ logo: string }>();
 const SITE_NAME = "Сэр Крол&к";
 </script>
 
+
+
 <template>
     <div class="page">
         <header class="header">

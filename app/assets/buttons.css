@@ -59,7 +59,8 @@
 }
 
 .btn-sm {
-    padding: 15px 20px;
+    padding: 15px 40px;
     font-size: 1.5rem;
     border-radius: 999px;
+    font-size: 1.2rem;
 }
