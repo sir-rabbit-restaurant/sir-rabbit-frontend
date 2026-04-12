@@ -21,7 +21,11 @@ const handlePrev = () => {
 };
 
 //для брэнда и основного текста
-defineProps<{ name: string }>();
+const props = defineProps<{ name: string }>();
+
+const getSlideAlt = (index: number) =>
+    `${props.name}: фото из галереи, слайд ${index + 1}`;
+
 </script>
 
 <template>
@@ -47,7 +51,8 @@ defineProps<{ name: string }>();
                         class="hero-gallery-slide"
                         :class="{ 'is-active': index === activeIndex }"
                     >
-                        <img :src="getImageUrl(slide.image, { quality: 80 })" />
+                        <img :src="getImageUrl(slide.image, { quality: 80 })"
+                             :alt="getSlideAlt(index)" />
                     </div>
                 </div>
 
