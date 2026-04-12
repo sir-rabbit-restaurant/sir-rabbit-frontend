@@ -21,9 +21,26 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://sir-rabbit.ru",
       directus: {
         url: process.env.DIRECTUS_URL,
       },
+    },
+  },
+
+  app: {
+    head: {
+      title: "Sir Rabbit - Ресторан в центре Москвы",
+      htmlAttrs: {
+        lang: "ru",
+      },
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.svg",
+        },
+      ],
     },
   },
 });
