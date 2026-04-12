@@ -14,11 +14,11 @@
 const { $directus, $readItems } = useNuxtApp();
 import type { SiteInfo, Contact } from "~/models";
 
-const config = useRuntimeConfig();
 
-const siteUrl = 'https://sir-rabbit.ru';
-const pageUrl = `${siteUrl}/`;
-const previewImage = `${siteUrl}/og-preview.png`;
+
+const siteConfig = useSiteConfig()
+const pageUrl = `${siteConfig.url}/`
+const previewImage = `${siteConfig.url}/og-preview.png`;
 
 
 const { data: siteInfo } = await useAsyncData("site_info", () =>
@@ -52,6 +52,11 @@ useSeoMeta({
     twitterImage: previewImage,
 });
 
+useHead({
+    link: [
+        { rel: 'canonical', href: pageUrl }
+    ]
+});
 
 </script>
 

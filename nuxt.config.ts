@@ -1,15 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
+import { url } from "node:inspector";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["@vue/devtools-core", "@vue/devtools-kit", "@directus/sdk"],
+      include: ["@vue/devtools-core", "@vue/devtools-kit", "@directus/sdk", "swiper/vue"],
     },
   },
+
   css: [
     "~/assets/main.css",
     "~/assets/header.css",
@@ -19,9 +22,9 @@ export default defineNuxtConfig({
     "~/assets/buttons.css",
     "~/assets/footer.css",
   ],
+
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://sir-rabbit.ru",
       directus: {
         url: process.env.DIRECTUS_URL,
       },
@@ -43,4 +46,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  site: {
+    url: "https://sir-rabbit.ru",
+    name: "Sir Rabbit",
+      },
+
+  modules: ["@nuxtjs/seo"],
+
+  
 });
