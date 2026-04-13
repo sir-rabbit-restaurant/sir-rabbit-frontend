@@ -9,7 +9,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["@vue/devtools-core", "@vue/devtools-kit", "@directus/sdk", "swiper/vue"],
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "@directus/sdk",
+        "swiper/vue",
+      ],
     },
   },
 
@@ -33,7 +38,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Sir Rabbit - Ресторан в центре Москвы",
+      title: "Сэр Кролик",
       htmlAttrs: {
         lang: "ru",
       },
@@ -49,10 +54,8 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://sir-rabbit.ru",
-    name: "Sir Rabbit",
-      },
+    name: "Сэр Кролик",
+  },
 
   modules: ["@nuxtjs/seo"],
-
-  
 });

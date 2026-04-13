@@ -11,15 +11,13 @@
 </template>
 
 <script setup lang="ts">
+import { DEFAULT_SITE_NAME } from "~/data";
 const { $directus, $readItems } = useNuxtApp();
 import type { SiteInfo, Contact } from "~/models";
 
-
-
-const siteConfig = useSiteConfig()
-const pageUrl = `${siteConfig.url}/`
+const siteConfig = useSiteConfig();
+const pageUrl = `${siteConfig.url}/`;
 const previewImage = `${siteConfig.url}/og-preview.png`;
-
 
 const { data: siteInfo } = await useAsyncData("site_info", () =>
     $directus.request<SiteInfo>($readItems("site_info")),
@@ -29,11 +27,12 @@ const { data: contacts } = await useAsyncData("contacts", () =>
     $directus.request<Contact[]>($readItems("contact")),
 );
 const seoTitle = computed(
-    () => `${siteInfo.value?.name ?? "Sir Rabbit"} — ресторан • бар • караоке`,
+    () =>
+        `${siteInfo.value?.name ?? DEFAULT_SITE_NAME} — ресторан • бар • караоке`,
 );
 const seoDescription = computed(
     () =>
-        `${siteInfo.value?.name ?? "Sir Rabbit"}: уютный ресторан для красивых вечеров. Бронируйте стол онлайн и смотрите актуальное меню.`,
+        `${siteInfo.value?.name ?? DEFAULT_SITE_NAME}: уютный ресторан для красивых вечеров. Бронируйте стол онлайн и смотрите актуальное меню.`,
 );
 
 useSeoMeta({
@@ -45,7 +44,7 @@ useSeoMeta({
     ogDescription: () => seoDescription.value,
     ogUrl: pageUrl,
     ogImage: previewImage,
-    ogImageAlt: "Open Graph превью ресторана Sir Rabbit",
+    ogImageAlt: "Open Graph превью ресторана " + DEFAULT_SITE_NAME,
     twitterCard: "summary_large_image",
     twitterTitle: () => seoTitle.value,
     twitterDescription: () => seoDescription.value,
@@ -53,10 +52,6 @@ useSeoMeta({
 });
 
 useHead({
-    link: [
-        { rel: 'canonical', href: pageUrl }
-    ]
+    link: [{ rel: "canonical", href: pageUrl }],
 });
-
 </script>
-
