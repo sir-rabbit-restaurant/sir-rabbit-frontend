@@ -78,13 +78,14 @@ const menuItems = computed(() => {
             </div>
 
             <!-- Фильтры (Чипсы) -->
-            <div
-                class="flex gap-3 mb-10 no-scrollbar mx-4 px-4 py-2 md:mx-0 md:px-0"
-            >
+            <div class="flex gap-3 mb-10 no-scrollbar py-2 md:mx-0 md:px-0">
                 <Swiper
                     slidesPerView="auto"
                     class="flex gap-3 overflow-x-auto"
                     spaceBetween="10"
+                    :direction="'horizontal'"
+                    :mousewheel="true"
+                    :grabCursor="true"
                 >
                     <SwiperSlide class="w-auto!">
                         <button
