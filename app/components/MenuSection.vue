@@ -113,7 +113,7 @@ const menuItems = computed(() => {
                             class="flex m-1 whitespace-nowrap w-fit items-center justify-center border-primary/50 px-6 py-2 border-2 rounded-full transition-all duration-300"
                             :class="
                                 activeCategory === c.id
-                                    ? 'bg-primary '
+                                    ? 'bg-primary text-background'
                                     : 'bg-transparent hover:bg-primary/50  active:bg-primary/80  focus:outline-primary focus:outline-4'
                             "
                             @click="filterByCategory(c.id)"
@@ -132,7 +132,7 @@ const menuItems = computed(() => {
                         ? menuItems
                         : menuItems.slice(0, 4)"
                     :key="item.id"
-                    class="flex flex-col rounded-[34px] overflow-hidden bg-white/5 border border-white/10 transition-all"
+                    class="flex flex-col backdrop-blur-sm rounded-[34px] overflow-hidden bg-white/5 border border-white/10 transition-all"
                 >
                     <div
                         class="relative h-50 md:h-60 rounded-[34px] overflow-hidden bg-linear-to-br from-[#f3f3f3] to-[#e2e2e2]"

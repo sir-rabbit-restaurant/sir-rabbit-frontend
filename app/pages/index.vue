@@ -1,7 +1,7 @@
 <template>
     <HeroSection v-if="siteInfo" :name="siteInfo.name" />
     <MenuSection />
-    <Contacts
+    <ContactsSection
         v-if="siteInfo && contacts"
         :schedule="siteInfo.schedule"
         :address="siteInfo.address"
