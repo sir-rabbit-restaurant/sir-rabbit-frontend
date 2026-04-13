@@ -24,13 +24,17 @@ type Category = {
     dishes: Dish[];
 };
 
-const { data: categories } = await useAsyncData("categories", () =>
+const { data: categories, error } = await useAsyncData("categories", () =>
     $directus.request<Category[]>(
         $readItems("dish_category", {
             fields: ["*", "dishes.*"],
         }),
     ),
 );
+
+if (error.value) {
+    console.log("Failed fetching categories", error.value);
+}
 
 const activeCategory = ref<string | undefined>(undefined);
 
